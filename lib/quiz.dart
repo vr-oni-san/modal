@@ -4,6 +4,7 @@ import 'modal.dart';
 Column QuizBody(BuildContext context) {
   return Column(
     children: [
+      // ここに Row を使っていたのを外すことで、Container の double.infinity を使うことができた。
       Padding(
         padding: const EdgeInsets.all(8.0),
         child: Container(
