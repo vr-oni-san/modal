@@ -39,8 +39,8 @@ class _WidState extends State<Wid> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("うんこ", style: TextStyle(
-                fontSize: 30
+              Text("下のアイコンをクリックすると・・・", style: TextStyle(
+                fontSize: 15
               ),),
             ],
           ),
@@ -49,9 +49,30 @@ class _WidState extends State<Wid> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               InkWell(
-                child: Text("aaa"),
+                child: Text("aaa", style: TextStyle(
+                  fontSize: 30
+                ),),
                 onTap: (){
-                  print("eatwell");
+                  showModalBottomSheet<void>(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return
+                         Container(
+                           // モーダルのheight
+                           height: 700,
+                           child: Column(
+                             children: [
+                               ElevatedButton(onPressed: ()=> Navigator.pop(context),
+                                   child: Text("クイズに戻る")
+                               ),
+                               Divider(),
+                               ElevatedButton(onPressed: () {},
+                                   child: Text("ふぁぼ"))
+                             ],
+                           ),
+                         );
+                      }
+                  );
                 },
               )
             ],
@@ -62,4 +83,3 @@ class _WidState extends State<Wid> {
   }
 }
 
-// モーダルクラス
